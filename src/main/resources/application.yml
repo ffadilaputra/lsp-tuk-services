@@ -1,6 +1,6 @@
 spring:
   application:
-    name: lsp-discovery-service
+    name: lsp-tuk-service
   data:
     mongodb:
       uri: mongodb://root:asdqwe123@ds259463.mlab.com:59463/telolet
