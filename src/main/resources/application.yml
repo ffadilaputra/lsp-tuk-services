@@ -20,6 +20,3 @@ eureka:
     hostname: ${DOMAIN_NAME}
     nonSecurePort: 80
   password: ${USER_PASSWORD:password}
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_URL:http://user:asdqwe123@lsp-discovery-service.herokuapp.com/
