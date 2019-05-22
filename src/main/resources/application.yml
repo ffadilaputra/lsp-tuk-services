@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: lsp-discovery-service
+  data:
+    mongodb:
+      uri: mongodb://root:asdqwe123@ds259463.mlab.com:59463/telolet
+  security:
+    user:
+      password: ${eureka.password}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://user:asdqwe123@localhost:8761}/eureka/
+---
+spring:
+  profiles: heroku
+eureka:
+  instance:
+    hostname: ${DOMAIN_NAME}
+    nonSecurePort: 80
+  password: ${USER_PASSWORD:password}
