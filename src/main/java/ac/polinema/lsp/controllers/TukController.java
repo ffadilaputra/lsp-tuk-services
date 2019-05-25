@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "https://lsp-api-gateway.herokuapp.com/api/management/tuk" , maxAge = 3600)
+
 @RestController
 @RequestMapping(value = "tuk")
 public class TukController {
