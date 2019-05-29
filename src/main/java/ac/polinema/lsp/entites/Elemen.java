@@ -9,10 +9,10 @@ import org.springframework.data.annotation.Id;
 public class Elemen {
 
     @Id
-    private String id_elemen;
+    private String _id;
 
     private String judul_elemen;
 
-    private String kode_unit;
+    private String id_unit;
 
 }

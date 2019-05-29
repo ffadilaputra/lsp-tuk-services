@@ -32,7 +32,7 @@ public class TukImpl implements TukServices {
 
     @Override
     public Tuk update(String id, Tuk tuk) {
-        tuk.getId_tuk();
+        tuk.get_id();
         return tukRepository.save(tuk);
     }
 

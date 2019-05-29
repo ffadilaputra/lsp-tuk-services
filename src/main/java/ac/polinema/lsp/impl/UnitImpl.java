@@ -31,7 +31,7 @@ public class UnitImpl implements UnitServices {
 
     @Override
     public Unit update(String id, Unit unit) {
-        unit.getId_unit();
+        unit.get_id();
         return unitRepository.save(unit);
     }
 

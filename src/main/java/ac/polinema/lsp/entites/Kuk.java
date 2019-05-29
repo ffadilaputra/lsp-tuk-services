@@ -9,7 +9,7 @@ import org.springframework.data.annotation.Id;
 public class Kuk {
 
     @Id
-    private String id_kuk;
+    private String _id;
 
     private String pertanyaan;
 

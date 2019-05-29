@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping(value = "skema")
 public class SkemaController {
@@ -64,8 +63,8 @@ public class SkemaController {
                 .body(response);
     }
 
-    @PutMapping(value = "{id}")
-    ResponseEntity<Response> update(@PathVariable("id") String id, @RequestBody @Validated Skema skema){
+    @PutMapping(value = "{id_skema}")
+    ResponseEntity<Response> update(@PathVariable("id_skema") String id, @RequestBody @Validated Skema skema){
         String nameOfCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
         Response response = new Response();
         response.setService(this.getClass().getName() + nameOfCurrMethod);
@@ -77,8 +76,8 @@ public class SkemaController {
                 .body(response);
     }
 
-    @DeleteMapping(value = "{id}")
-    ResponseEntity<Response> deleteById(@PathVariable("id") String id){
+    @DeleteMapping(value = "{id_skema}")
+    ResponseEntity<Response> deleteById(@PathVariable("id_skema") String id){
         String nameOfCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
         Response response = new Response();
         response.setService(this.getClass().getName() + nameOfCurrMethod);

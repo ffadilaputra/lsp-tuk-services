@@ -2,7 +2,6 @@ package ac.polinema.lsp.impl;
 
 import ac.polinema.lsp.entites.Elemen;
 import ac.polinema.lsp.repositories.ElemenRepository;
-import ac.polinema.lsp.repositories.SkemaRepository;
 import ac.polinema.lsp.services.ElemenServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +32,7 @@ public class ElemenImpl implements ElemenServices {
 
     @Override
     public Elemen update(String id, Elemen elemen) {
-        elemen.getId_elemen();
+        elemen.get_id();
         return elemenRepository.save(elemen);
     }
 

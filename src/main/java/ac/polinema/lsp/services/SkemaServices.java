@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface SkemaServices {
     List<Skema> findAll();
+    List<Skema> findSkemabyTuk(String id);
     Optional<Skema> findById(String id);
     Skema save(Skema skema);
     Skema update(String id,Skema skema);

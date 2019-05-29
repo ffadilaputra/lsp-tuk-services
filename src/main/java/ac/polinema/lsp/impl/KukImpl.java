@@ -32,7 +32,7 @@ public class KukImpl implements KukServices {
 
     @Override
     public Kuk update(String id, Kuk kuk) {
-        kuk.getId_kuk();
+        kuk.get_id();
         return kukRepository.save(kuk);
     }
 

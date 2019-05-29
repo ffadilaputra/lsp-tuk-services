@@ -9,12 +9,11 @@ import org.springframework.data.annotation.Id;
 public class Unit {
 
     @Id
-    private String id_unit;
+    private String _id;
 
     private String kode_unit;
 
     private String judul_unit;
 
-    private String no_skema;
-
+    private String id_skema;
 }

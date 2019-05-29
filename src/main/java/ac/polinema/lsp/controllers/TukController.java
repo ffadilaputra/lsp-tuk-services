@@ -4,9 +4,11 @@ import ac.polinema.lsp.entites.Tuk;
 import ac.polinema.lsp.utils.Response;
 import ac.polinema.lsp.services.TukServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -63,13 +65,15 @@ public class TukController {
                 .body(response);
     }
 
-    @PutMapping(value = "{id}")
-    ResponseEntity<Response> update(@PathVariable("id") String id, @RequestBody @Validated Tuk tuk){
+    @PutMapping(value = "{_id}")
+    ResponseEntity<Response> update(@PathVariable("_id") String id, @RequestBody @Validated Tuk tuk){
+
         String nameOfCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
         Response response = new Response();
         response.setService(this.getClass().getName() + nameOfCurrMethod);
         response.setMessage("Data Updated Successfully");
         //Update Data
+
         response.setData(tukService.update(id,tuk));
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -77,8 +81,8 @@ public class TukController {
                 .body(response);
     }
 
-    @DeleteMapping(value = "{id}")
-    ResponseEntity<Response> deleteById(@PathVariable("id") String id){
+    @DeleteMapping(value = "{_id}")
+    ResponseEntity<Response> deleteById(@PathVariable("_id") String id){
         String nameOfCurrMethod = new Throwable().getStackTrace()[0].getMethodName();
         Response response = new Response();
         response.setService(this.getClass().getName() + nameOfCurrMethod);

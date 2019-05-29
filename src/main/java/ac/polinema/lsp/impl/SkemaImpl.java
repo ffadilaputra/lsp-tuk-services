@@ -21,6 +21,11 @@ public class SkemaImpl implements SkemaServices {
     }
 
     @Override
+    public List<Skema> findSkemabyTuk(String id) {
+        return null;
+    }
+
+    @Override
     public Optional<Skema> findById(String id) {
         return skemaRepository.findById(id);
     }
@@ -32,7 +37,7 @@ public class SkemaImpl implements SkemaServices {
 
     @Override
     public Skema update(String id, Skema skema) {
-        skema.getId_skema();
+        skema.get_id();
         return skemaRepository.save(skema);
     }
 
