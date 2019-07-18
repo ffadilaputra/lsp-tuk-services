@@ -10,23 +10,19 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class BelajarSpringMongoApplication {
+public class Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BelajarSpringMongoApplication.class, args);
+		SpringApplication.run(Main.class, args);
 	}
 
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
-
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/tuk/**").allowedOrigins("http://localhost:3000").allowedMethods("GET", "POST","PUT", "DELETE");
-				registry.addMapping("/skema/**").allowedOrigins("http://localhost:3000").allowedMethods("GET", "POST","PUT", "DELETE");
-				registry.addMapping("/kuk/**").allowedOrigins("http://localhost:3000").allowedMethods("GET", "POST","PUT", "DELETE");
-				registry.addMapping("/unit/**").allowedOrigins("http://localhost:3000").allowedMethods("GET", "POST","PUT", "DELETE");
-				registry.addMapping("/elemen/**").allowedOrigins("http://localhost:3000").allowedMethods("GET", "POST","PUT", "DELETE");
+				registry.addMapping("/tuk/**").allowedOrigins("http://localhost:3001").allowedMethods("GET", "POST","PUT", "DELETE");
 			}
 		};
 	}
@@ -37,6 +33,7 @@ public class BelajarSpringMongoApplication {
 		CorsConfiguration config = new CorsConfiguration();
 		config.setAllowCredentials(true);
 		config.addAllowedOrigin("http://localhost:3000");
+		config.addAllowedOrigin("http://localhost:3001");
 		config.addAllowedHeader("*");
 		config.addExposedHeader("X-Total-Count");
 		config.addExposedHeader("Content-Range");

@@ -44,5 +44,6 @@ public class SkemaImpl implements SkemaServices {
     @Override
     public void delete(String id) {
         skemaRepository.deleteById(id);
+
     }
 }
